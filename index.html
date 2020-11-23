@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    Armath-Send
+  </title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--load all styles -->
+</head>
+
+<body>
+  <div class="container">
+    <div id="main" class="row">
+      <div id="logo">
+        <img src="./img/armath_send_logo.png" alt="armath logo" />
+      </div>
+
+      <div class="container">
+        <div id="block" class="row">
+          <div id="input" class="col-lg-5 col-md-12  reset">
+            <label for="upload">
+              <i class="fa fa-cloud-upload"></i>
+              <span> ԸՆՏՐԵԼ ՆԻՇՔԸ</span>
+            </label>
+          </div>
+
+          <input type="file" multiple id="upload" name="file" style="display: none;" onchange="onFileChange(event)" />
+
+          <div id="about" class="col-lg-6 col-md-12" style="margin: 0;">
+            <h2>
+              Մինչև 400 ՄԲ ծավալով նիշքերի փոխանցման համակարգ
+            </h2>
+            </br>
+            <p>
+              <strong>Armath Send</strong>-ը թույլ է տալիս փոխանակել նիշքեր (files) ծայրից ծայր գաղտնագրման միջոցով:
+              Իսկ հղումը 24 ժամ հետո ինքնաբերաբար ջնջվում է կամ պարպազպես չի գործում։ Այսպիսով, դուք կարող եք
+              վերահսկել այն, ինչով կիսվում եք և համոզված լինել, որ ձեր նյութերը հավերժ չեն մնա համացանցում:
+            </p>
+          </div>
+
+          <div class="uploaded-files-wrapper col-sm-12">
+            <div class="uploaded-files">
+              <h2>ԲԵՌՆՎԱԾ ՆԻՇՔԵՐԻ ՑԱՆԿ</h2>
+              <table class="uploaded-files-list">
+                <thead>
+                  <tr>
+                    <th>
+                      ՆԻՇՔԻ ԱՆՎԱՆՈՒՄԸ
+                    </th>
+                    <th>
+                      ՆԻՇՔԻ ՉԱՓԸ
+                    </th>
+                    <th>
+                      ԳՈՐԾՈՂՈՒԹՅՈՒՆՆԵՐ
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div id="bottom" class="text-center w-100">
+        <a href="./information.html">
+          <strong>Կայքի հեղինակները</strong>
+        </a>
+      </div>
+
+      <div class="overlay upload-overlay">
+        <div class="overlay-wrapper upload-wrapper">
+          <div class="upload-progress-percent">50%</div>
+          <div class="upload-progress">
+            <div class="upload-progress-indicator"></div>
+          </div>
+          <button class="result-copy-btn" onclick="onUploadCancel()">Չեղարկել</button>
+        </div>
+      </div>
+
+      <div class="overlay success-overlay">
+        <div class="overlay-wrapper">
+          <h1>Նիշքը հաղոջությամբ բեռնված է,այն կարող եք ներբեռնել հետևյալ հասցեով !</h1>
+          <input id="result-url" />
+
+          <button onclick="copyToClipboard('result-url')" class="result-copy-btn">
+            <span>Պատճենել հասցեն</span> &nbsp;
+            <i class="fa fa-copy"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyC2QRMtIVW24rwc7_S88sm0kOQSOxLxtuw",
+      authDomain: "armath-send.firebaseapp.com",
+      databaseURL: "https://armath-send.firebaseio.com",
+      projectId: "armath-send",
+      storageBucket: "armath-send.appspot.com",
+      messagingSenderId: "674954055342",
+      appId: "1:674954055342:web:5b1a5e5763788529f4e73f",
+      measurementId: "G-3C84X6ZL6M",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="script/script.js"></script>
+</body>
+
+</html>
