@@ -100,6 +100,7 @@ const removeUploadedFile = (url) => {
 };
 
 const renderUploadedFiles = () => {
+
   const uploadedFiles = getUploadedFiles();
   uploads_table.innerHTML = "";
   if (uploadedFiles && uploadedFiles.length) {
