@@ -19,6 +19,7 @@ const closeResultOverlay = () => (success_overlay.style.display = "none");
 
 const onFileChange = (event) => {
   const file = event.target.files[0];
+  console.log(file);
   upload_input.value = "";
   const fileRef = storageRef.child(file.name);
 
